@@ -1,5 +1,5 @@
 {
-    "name": "michabbb/ansi-to-html",
+    "name": "macropage/ansi-to-html",
     "type": "library",
     "description": "A library to convert a text with ANSI codes to HTML",
     "license": "MIT",
