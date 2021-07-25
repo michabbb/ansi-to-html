@@ -1,3 +1,7 @@
+# this is fork of sensiolabs/ansi-to-html
+
+modified to by compatible with php 8.x
+
 ANSI to HTML5 Converter
 =======================
 

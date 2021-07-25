@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of ansi-to-html.
@@ -11,14 +12,16 @@
 
 namespace SensioLabs\AnsiConverter\Theme;
 
+use JetBrains\PhpStorm\Pure;
+
 /**
  * Base theme.
  */
 class Theme
 {
-    public function asCss($prefix = 'ansi_color')
+    #[Pure] public function asCss($prefix = 'ansi_color'): string
     {
-        $css = array();
+        $css = [];
         foreach ($this->asArray() as $name => $color) {
             $css[] = sprintf('.%s_fg_%s { color: %s }', $prefix, $name, $color);
             $css[] = sprintf('.%s_bg_%s { background-color: %s }', $prefix, $name, $color);
@@ -27,26 +30,26 @@ class Theme
         return implode("\n", $css);
     }
 
-    public function asArray()
+    public function asArray(): array
     {
-        return array(
-            'black' => 'black',
-            'red' => 'darkred',
-            'green' => 'green',
-            'yellow' => 'yellow',
-            'blue' => 'blue',
+        return [
+            'black'   => 'black',
+            'red'     => 'darkred',
+            'green'   => 'green',
+            'yellow'  => 'yellow',
+            'blue'    => 'blue',
             'magenta' => 'darkmagenta',
-            'cyan' => 'cyan',
-            'white' => 'white',
+            'cyan'    => 'cyan',
+            'white'   => 'white',
 
-            'brblack' => 'black',
-            'brred' => 'red',
-            'brgreen' => 'lightgreen',
-            'bryellow' => 'lightyellow',
-            'brblue' => 'lightblue',
+            'brblack'   => 'black',
+            'brred'     => 'red',
+            'brgreen'   => 'lightgreen',
+            'bryellow'  => 'lightyellow',
+            'brblue'    => 'lightblue',
             'brmagenta' => 'magenta',
-            'brcyan' => 'lightcyan',
-            'brwhite' => 'white',
-        );
+            'brcyan'    => 'lightcyan',
+            'brwhite'   => 'white',
+        ];
     }
 }
